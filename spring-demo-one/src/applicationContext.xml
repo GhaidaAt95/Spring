@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Header information for the xml name spaces, what is required for spring
+to be able to process this file using its grammer and XML schema -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="myLoggerConfig" class="com.ghaida.springdemo.MyLoggerConfig" init-method="initLogger">
+    	<property name="rootLoggerLevel" value="FINE" />
+    	<property name="printedLoggerLevel" value="FINE"/>
+    </bean>
+    
+	<!-- Define your beans here -->
+	<bean id="myCoach"
+		  class="com.ghaida.springdemo.TrackCoach">
+    </bean>
+    <bean id="myOtherCoach"
+    	  class="com.ghaida.springdemo.BaseballCoach">
+   	</bean>
+   	<bean id="myZumbaCoach"
+   		  class="com.ghaida.springdemo.ZumbaCoach">
+   	</bean>
+</beans>
